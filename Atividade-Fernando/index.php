@@ -119,8 +119,42 @@
     <?php
 
     require_once "conexao.php";
+            $sql = "SELECT
+                        a.nome,
+                        COUNT(l.id_livro) AS quantidade_de_livros
+                    FROM
+                        tb_autor AS a
+                    JOIN
+                        tb_livro AS l ON a.id_autor = l.id_autor
+                    GROUP BY
+                        a.id_autor, a.nome
+                    ORDER BY
+                        quantidade_de_livros DESC
+                    LIMIT 1; ";
+            $comando = mysqli_prepare($conexao, $sql);
+            mysqli_stmt_execute($comando);
+            $resultados = mysqli_stmt_get_result($comando);
 
-        $sql = " ";
+            while ($comando = mysqli_fetch_assoc($resultados)) {
+                $resu = $comando['nome'];
+                
+            }
+
+            echo"Autor com mais livros: $resu";
+
+
+            echo "<br>";
+
+
+    ?>
+
+
+
+    <?php
+
+    require_once "conexao.php";
+
+        $sql = "SELECT data_emprestimo AS empre_antigo FROM tb_emprestimo ORDER BY data_emprestimo ASC limit 1 ";
         $comando = mysqli_prepare($conexao, $sql);
         mysqli_stmt_execute($comando);
 
@@ -133,7 +167,6 @@
         echo"Autor mais Jovem: <br> $autorJovem $autorAno";
     
     ?>
-
 
 
 
