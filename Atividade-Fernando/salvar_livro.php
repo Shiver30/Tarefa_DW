@@ -23,7 +23,7 @@
     move_uploaded_file($caminho_temporario, $caminho_destino);
 
     // INSERT INTO tb_livro VALUES (null, 'Harry Potter', 'Ficção', 1990)       
-    $sql = "INSERT INTO tb_livro (nome, genero, ano, foto, id_autor) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO tb_livro (nome, genero, ano, foto, id_livro_autor) VALUES (?, ?, ?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
 
     // letra s -> varchar, date, datetime, char

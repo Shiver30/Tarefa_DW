@@ -18,6 +18,7 @@
     <a href="listar_livros.php">Lista de Livros</a> <br>
     <a href="listar_livros_2.php">Lista de Livros (cartões)</a> <br>
     <a href="listar_autor.php">Listar Autores</a> <br>
+    <a href="listar_aluno.php">Listar Alunos</a>
 
 
     <p>
@@ -77,6 +78,62 @@
     
     ?>
     </p>
+
+    <?php
+
+    require_once "conexao.php";
+
+        $sql = "select ano as 'Ano do Livro', nome as 'Livro Antigo' from tb_livro order by ano ASC limit 1;";
+        $comando = mysqli_prepare($conexao, $sql);
+        mysqli_stmt_execute($comando);
+
+        $resultados = mysqli_stmt_get_result($comando);
+
+        while ($comando = mysqli_fetch_assoc($resultados)) {
+            $livroAntigo = $comando['Livro Antigo'];
+            $anoLivro = $comando['Ano do Livro'];
+        }
+        echo"Livro mais Antigo: <br> $livroAntigo $anoLivro";
+    
+    ?>
+     <br><br>
+
+    <?php
+
+    require_once "conexao.php";
+
+        $sql = "select data_nascimento as 'Nascimento', nome as 'Autor mais Jovem' from tb_autor order by data_nascimento DESC limit 1;";
+        $comando = mysqli_prepare($conexao, $sql);
+        mysqli_stmt_execute($comando);
+
+        $resultados = mysqli_stmt_get_result($comando);
+
+        while ($comando = mysqli_fetch_assoc($resultados)) {
+            $autorJovem = $comando['Autor mais Jovem'];
+            $autorAno = $comando['Nascimento'];
+        }
+        echo"Autor mais Jovem: <br> $autorJovem $autorAno";
+    
+    ?>
+
+    <?php
+
+    require_once "conexao.php";
+
+        $sql = " ";
+        $comando = mysqli_prepare($conexao, $sql);
+        mysqli_stmt_execute($comando);
+
+        $resultados = mysqli_stmt_get_result($comando);
+
+        while ($comando = mysqli_fetch_assoc($resultados)) {
+            $autorJovem = $comando['Autor mais Jovem'];
+            $autorAno = $comando['Nascimento'];
+        }
+        echo"Autor mais Jovem: <br> $autorJovem $autorAno";
+    
+    ?>
+
 
 
 

@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `biblioteca`.`tb_livro` (
   `genero` VARCHAR(60) NOT NULL,
   `ano` YEAR NOT NULL,
   `foto` VARCHAR(200) NULL,
-  `id_autor` INT NOT NULL,
+  `id_livro_autor` INT NOT NULL,
   PRIMARY KEY (`id_livro`),
   INDEX `fk_tb_livro_tb_autor_idx` (`id_autor` ASC) VISIBLE,
   CONSTRAINT `fk_tb_livro_tb_autor`
