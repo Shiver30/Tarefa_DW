@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `biblioteca`.`tb_livro` (
   `id_livro` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `genero` VARCHAR(60) NOT NULL,
-  `ano` YEAR NOT NULL,
+  `ano` DATE NOT NULL,
   `foto` VARCHAR(200) NULL,
   `id_livro_autor` INT NOT NULL,
   PRIMARY KEY (`id_livro`),
