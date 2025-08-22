@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <style>
-        /* Resetando estilos */
         body, h1, p {
             margin: 0;
             padding: 0;
@@ -25,7 +24,6 @@
             margin-bottom: 30px;
         }
 
-        /* Container para o dashboard */
         .dashboard-container {
             display: flex;
             flex-wrap: wrap;
@@ -60,7 +58,6 @@
             color: #34495e;
         }
 
-        /* Links na página */
         .links-container {
             display: flex;
             justify-content: center;
@@ -84,7 +81,6 @@
 
     <h1>Dashboard de Cadastro</h1>
 
-    <!-- Links de navegação -->
     <div class="links-container">
         <a href="form_livro.php">Cadastrar Livro</a>
         <a href="form_autor.php">Cadastrar Autor</a>
@@ -100,10 +96,8 @@
         <a href="listar_aluno.php">Listar Alunos</a>
     </div>
 
-    <!-- Container para o Dashboard -->
     <div class="dashboard-container">
 
-        <!-- Cartão 1: Quantidade de Alunos -->
         <div class="card">
             <h2>Quantidade de Alunos</h2>
             <p>
@@ -121,7 +115,6 @@
             </p>
         </div>
 
-        <!-- Cartão 2: Quantidade de Autores -->
         <div class="card">
             <h2>Quantidade de Autores</h2>
             <p>
@@ -139,7 +132,6 @@
             </p>
         </div>
 
-        <!-- Cartão 3: Quantidade de Livros -->
         <div class="card">
             <h2>Quantidade de Livros</h2>
             <p>
@@ -157,7 +149,6 @@
             </p>
         </div>
 
-        <!-- Cartão 4: Livro mais Antigo -->
         <div class="card">
             <h2>Livro Mais Antigo</h2>
             <p>
@@ -176,7 +167,6 @@
             </p>
         </div>
 
-        <!-- Cartão 5: Autor mais Jovem -->
         <div class="card">
             <h2>Autor Mais Jovem</h2>
             <p>
@@ -195,7 +185,6 @@
             </p>
         </div>
 
-        <!-- Cartão 6: Autor com Mais Livros -->
         <div class="card">
             <h2>Autor com Mais Livros</h2>
             <p>
@@ -213,7 +202,6 @@
             </p>
         </div>
 
-        <!-- Cartão 7: Emprestimo Mais Antigo -->
         <div class="card">
             <h2>Emprestimo Mais Antigo</h2>
             <p>
