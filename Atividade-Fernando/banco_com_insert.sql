@@ -91,7 +91,7 @@ CREATE TABLE `tb_curso` (
 
 LOCK TABLES `tb_curso` WRITE;
 /*!40000 ALTER TABLE `tb_curso` DISABLE KEYS */;
-INSERT INTO `tb_curso` VALUES (1,'pedro',381,2025);
+INSERT INTO `tb_curso` VALUES (1,'step',381,2025);
 /*!40000 ALTER TABLE `tb_curso` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -116,12 +116,12 @@
     
     ?>
 
+        <br><br>
+
     <?php
 
     require_once "conexao.php";
-            $sql = "SELECT
-                        a.nome,
-                        COUNT(l.id_livro) AS quantidade_de_livros FROM tb_autor AS a
+            $sql = "SELECT a.nome, COUNT(l.id_livro) AS quantidade_de_livros FROM tb_autor AS a
                     JOIN tb_livro AS l ON a.id_autor = l.id_autor GROUP BY a.id_autor, a.nome
                     ORDER BY quantidade_de_livros DESC LIMIT 1; ";
             $comando = mysqli_prepare($conexao, $sql);
@@ -133,29 +133,21 @@
                 
             }
 
-            echo"Autor com mais livros: $autorMais";
+            echo"Autor com mais livros: <br> $autorMais";
 
             echo "<br>";
-            
-    ?>
+            echo "<br>";
 
-
-
-    <?php
-
-    require_once "conexao.php";
-
-        $sql = "SELECT data_emprestimo AS empre_antigo FROM tb_emprestimo ORDER BY data_emprestimo ASC limit 1 ";
+        $sql = "SELECT data_emprestimo AS 'Emprestimo antigo' FROM tb_emprestimo ORDER BY data_emprestimo ASC limit 1 ";
         $comando = mysqli_prepare($conexao, $sql);
         mysqli_stmt_execute($comando);
 
         $resultados = mysqli_stmt_get_result($comando);
 
         while ($comando = mysqli_fetch_assoc($resultados)) {
-            $autorJovem = $comando['Autor mais Jovem'];
-            $autorAno = $comando['Nascimento'];
+            $emprestimoAntigo = $comando['Emprestimo antigo'];
         }
-        echo"Autor mais Jovem: <br> $autorJovem $autorAno";
+        echo"Emprestimo mais antigo: <br> $emprestimoAntigo";
     
     ?>
 
